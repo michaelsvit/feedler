@@ -2,18 +2,23 @@ package com.michaelsvit.feedler;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
-import android.view.View;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
@@ -23,8 +28,9 @@ public class MainActivity extends AppCompatActivity
 
     private String visibleFeedUrl;
     private Feed visibleFeed;
+    private List<Article> articles;
 
-//    private ArticleAdapter adaper;
+    private ArticleAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +59,13 @@ public class MainActivity extends AppCompatActivity
 
         visibleFeedUrl = "http://www.androidpolice.com/feed/";
         getSupportLoaderManager().initLoader(FEED_LOADER_ID, null, this);
+
+        articles =  new ArrayList<>();
+        adapter = new ArticleAdapter(this, articles);
+        RecyclerView articlesRecyclerView = (RecyclerView) findViewById(R.id.articles_recycler_view);
+        articlesRecyclerView.setHasFixedSize(true);
+        articlesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        articlesRecyclerView.setAdapter(adapter);
     }
 
     @Override
@@ -120,16 +133,19 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onLoadFinished(Loader loader, Feed data) {
         // Clear previous visible feed
-//        adapter.clear();
+        articles.clear();
 
         visibleFeed = data;
         if (visibleFeed != null) {
-//            adapter.addAll(visibleFeed.getArticles());
+            articles.addAll(visibleFeed.getArticles());
         }
+        adapter.notifyDataSetChanged();
     }
 
     @Override
     public void onLoaderReset(Loader loader) {
-//        adapter.clear();
+        articles.clear();
+        adapter.notifyDataSetChanged();
     }
+
 }
