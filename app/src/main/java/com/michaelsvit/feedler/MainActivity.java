@@ -3,6 +3,8 @@ package com.michaelsvit.feedler;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.Loader;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,7 +16,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,
+                   LoaderManager.LoaderCallbacks<Feed>{
+
+    private static final int FEED_LOADER_ID = 0;
+
+    private String visibleFeedUrl;
+    private Feed visibleFeed;
+
+//    private ArticleAdapter adaper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +50,9 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        visibleFeedUrl = "http://www.androidpolice.com/feed/";
+        getSupportLoaderManager().initLoader(FEED_LOADER_ID, null, this);
     }
 
     @Override
@@ -97,5 +110,26 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public Loader<Feed> onCreateLoader(int id, Bundle args) {
+        return new FeedLoader(this, visibleFeedUrl);
+    }
+
+    @Override
+    public void onLoadFinished(Loader loader, Feed data) {
+        // Clear previous visible feed
+//        adapter.clear();
+
+        visibleFeed = data;
+        if (visibleFeed != null) {
+//            adapter.addAll(visibleFeed.getArticles());
+        }
+    }
+
+    @Override
+    public void onLoaderReset(Loader loader) {
+//        adapter.clear();
     }
 }
