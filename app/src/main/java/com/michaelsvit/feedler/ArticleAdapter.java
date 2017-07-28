@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -34,7 +35,13 @@ class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Article article = articles.get(position);
-        holder.contentText.setText(article.getTitle());
+        //TODO: set image
+        holder.title.setText(article.getTitle());
+        holder.content.setText(article.getDescription());
+        //TODO: set publisher
+        holder.publisher.setText("Publisher");
+        //TODO: change to time from now
+        holder.pubTime.setText(article.getPubDate());
     }
 
     @Override
@@ -44,11 +51,19 @@ class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView contentText;
+        private ImageView image;
+        private TextView title;
+        private TextView content;
+        private TextView publisher;
+        private TextView pubTime;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            this.contentText = (TextView) itemView.findViewById(R.id.article_content);
+            this.image = (ImageView) itemView.findViewById(R.id.article_item_image);
+            this.title = (TextView) itemView.findViewById(R.id.article_item_title);
+            this.content = (TextView) itemView.findViewById(R.id.article_item_content);
+            this.publisher = (TextView) itemView.findViewById(R.id.article_item_publisher);
+            this.pubTime = (TextView) itemView.findViewById(R.id.article_item_pub_time);
         }
     }
 }

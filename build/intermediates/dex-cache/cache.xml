@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\Dropbox\Programming\GitRepos\Feedler\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dd05862f8565d7ec85ed5442bde49e0363bd50ab">
+        <dex dex="D:\Dropbox\Programming\GitRepos\Feedler\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_d7962b2d3009824cce10a7f3a8403784c11244d7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Michael\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.12.0\3742beff8024d0a0073d284b7c5e4cbf73d99b25\okio-1.12.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3742beff8024d0a0073d284b7c5e4cbf73d99b25">
+        <dex dex="D:\Dropbox\Programming\GitRepos\Feedler\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.12.0_1d5694008b1c213ee859279227e289217846face\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Dropbox\Programming\GitRepos\Feedler\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="D:\Dropbox\Programming\GitRepos\Feedler\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_d496fa6b0b69dc792e62df3eb34c9ff90ffba7ae\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Michael\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.7.0\6edbebdd8868708db718d15c09c4b28037fd487e\okhttp-3.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6edbebdd8868708db718d15c09c4b28037fd487e">
+        <dex dex="D:\Dropbox\Programming\GitRepos\Feedler\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.7.0_882de24782ac477a95d5f880c0e59904f1d0e4c2\classes.dex" />
+    </item>
+
+</items>

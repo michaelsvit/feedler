@@ -1,0 +1,7 @@
+#Sun Apr 23 00:30:22 IDT 2017
+base.0=D\:\\Dropbox\\Programming\\GitRepos\\Feedler\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_d7962b2d3009824cce10a7f3a8403784c11244d7
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=D\:\\Dropbox\\Programming\\GitRepos\\Feedler\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_d496fa6b0b69dc792e62df3eb34c9ff90ffba7ae\\classes.dex
+base.1=D\:\\Dropbox\\Programming\\GitRepos\\Feedler\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_d496fa6b0b69dc792e62df3eb34c9ff90ffba7ae
+file.0=D\:\\Dropbox\\Programming\\GitRepos\\Feedler\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_d7962b2d3009824cce10a7f3a8403784c11244d7\\classes.dex
